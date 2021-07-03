@@ -6,3 +6,16 @@
 //
 
 import Foundation
+import Combine
+
+final class ArticlesViewModel: ObservableObject {
+    
+    // MARK: - Properties
+    @Published var articles = [Article]()
+    
+    // MARK: - Public API
+    func fetchArticles() {
+        articles = Article.articles
+    }
+    
+}
